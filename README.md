@@ -37,8 +37,8 @@ localStorage.setItem("cookiesPerSecond", cookiesPerSecond.toString());
 🏹 Retrieve data to populate your cookie upgrades from a third-party API using fetch and useEffect().
 https://cookie-upgrade-api.vercel.app/api/upgrades
 
-Please also provide an assignment reflection in your project README.md file.
-(Required)
+## Please also provide an assignment reflection in your project README.md file.(Required)
+
 🎯 Please mention the requirements you met and which goals you achieved for this assignment.
 
 🎯 Were there any requirements or goals that you were not quite able to achieve?
