@@ -1,7 +1,6 @@
 export default function CheatButtonDiv({ gameState, setGameState }) {
   function cheat() {
     const cookiesCount = gameState.cookiesCount + 1000000;
-    //! localStorage.setItem("gameState", JSON.stringify({ ...gameState, cookiesCount }));
     setGameState((prevState) => ({ ...prevState, cookiesCount }));
   }
   return (
