@@ -3,6 +3,7 @@ import "./App.css";
 import ShopItemsDiv from "./components/ShopItemsDiv";
 import NumbersDiv from "./components/NumbersDiv";
 import ClickerImgDiv from "./components/ClickerImgDiv";
+import CheatButtonDiv from "./components/CheatButtonDiv";
 
 function App() {
   // store the number of cookies per second in a object
@@ -34,6 +35,7 @@ function App() {
       <NumbersDiv gameState={gameState} />
       <ClickerImgDiv setGameState={setGameState} />
       <ShopItemsDiv gameState={gameState} setGameState={setGameState} />
+      <CheatButtonDiv gameState={gameState} setGameState={setGameState} />
     </div>
   );
 }
