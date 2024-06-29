@@ -26,7 +26,6 @@ export default function ShopItemsDiv({ gameState, setGameState }) {
   const buyShopItem = (itemCost, increase, id) => {
     // Check if the user has enough cookies to buy the item
     if (gameState.cookiesCount < itemCost) {
-      alert("Not enough cookies to buy this item");
       return;
     }
     setGameState((prevState) => {
@@ -55,21 +54,30 @@ export default function ShopItemsDiv({ gameState, setGameState }) {
 
   return (
     <>
+      <p>Shop</p>
       <div className="shop-items-container">
-        <p>Shop Items</p>
         {/* map() function to loop through the shopItems array and display them */}
-        {shopItems.map((item) => (
-          <div className="item" key={item.id}>
-            <p>{item.name}</p>
-            <p>Cost: {item.cost}</p>
-            <p>CPS: {item.increase}</p>
+        {shopItems.map((item) =>
+          gameState.cookiesCount >= item.cost - item.cost * 0.1 ||
+          gameState.shopItems.find((i) => i.id === item.id)?.amount > 0 ? (
             <button
+              className={
+                gameState.cookiesCount >= item.cost ? "item" : "red-item"
+              }
+              key={item.id}
               onClick={() => buyShopItem(item.cost, item.increase, item.id)}
             >
-              Buy
+              <p>{item.name}</p>
+              {/*find() function to find the item in the shopItems array and return it if it exists or 0 if it doesn't*/}
+              <p>
+                Amount:{" "}
+                {gameState.shopItems.find((i) => i.id === item.id)?.amount || 0}
+              </p>
+              <p>Cost: {item.cost}</p>
+              <p>CPS: {item.increase}</p>
             </button>
-          </div>
-        ))}
+          ) : null
+        )}
       </div>
     </>
   );
