@@ -4,16 +4,24 @@ import ShopItemsDiv from "./components/ShopItemsDiv";
 import NumbersDiv from "./components/NumbersDiv";
 import ClickerImgDiv from "./components/ClickerImgDiv";
 import CheatButtonDiv from "./components/CheatButtonDiv";
+import ResetButtonDiv from "./components/ResetButtonDiv";
 
 function App() {
-  // store the number of cookies per second in a object
-  const [gameState, setGameState] = useState({
-    cookiesCount: 0,
-    cookiesPerSecond: 1,
-    shopItems: [],
-  });
+  // Store the number of cookies per second in a object
+  const [gameState, setGameState] = useState(
+    JSON.parse(localStorage.getItem("savedGame")) || {
+      // JSON.parse to convert the string to an object and || to set the default value if there is no saved game
+      cookiesCount: 0,
+      cookiesPerSecond: 1,
+      shopItems: [],
+    }
+  );
+  // useEffect() to save the game state in the local storage every time the gameState changes
+  useEffect(() => {
+    localStorage.setItem("savedGame", JSON.stringify(gameState));
+  }, [gameState]);
 
-  // I need a timer to track the cookies per second, keeping an eye on the cookies per second value
+  // Timer to track the cookies per second
   // cookiesCount will go up by the number of cookies per second every second
   useEffect(() => {
     // setInterval to increase the number of cookies by the number of cookies per second
@@ -35,7 +43,10 @@ function App() {
       <NumbersDiv gameState={gameState} />
       <ClickerImgDiv setGameState={setGameState} />
       <ShopItemsDiv gameState={gameState} setGameState={setGameState} />
-      <CheatButtonDiv gameState={gameState} setGameState={setGameState} />
+      <div className="button-container">
+        <ResetButtonDiv setGameState={setGameState} />
+        <CheatButtonDiv gameState={gameState} setGameState={setGameState} />
+      </div>
     </div>
   );
 }
