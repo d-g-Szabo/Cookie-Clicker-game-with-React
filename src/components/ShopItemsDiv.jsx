@@ -29,27 +29,28 @@ export default function ShopItemsDiv({ gameState, setGameState }) {
       alert("Not enough cookies to buy this item");
       return;
     }
-    setGameState((prevState) => ({
-      ...prevState,
-      cookiesCount: prevState.cookiesCount - itemCost, // Subtract the cost of the item from the number of cookies
-      cookiesPerSecond: prevState.cookiesPerSecond + increase, // Increase the number of cookies per second
-      shopItems: [
-        // Check if the user already bought the item
-        // If the user already bought the item, increase the number of items
-        // If the user didn't buy the item, add the item to the shopItems array
-        prevState.shopItems.find((item) => item.id === id) // find() function to check if the user already bought the item // todo not saving correctly
-          ? prevState.shopItems.map((item) => {
-              // map() function to loop through the shopItems array
-              if (item.id === id) {
-                // If the Id of the item is equal to the id of the item the user wants to buy
-                item.ammount += 1; // Increase the number of items
-                // return { id: id, ammount: item.ammount + 1 }; // Increase the number of items
-              }
-              //   return item;
-            })
-          : [...prevState.shopItems, { id: id, ammount: 1 }], // If the user didn't buy the item, add the item to the shopItems array
-      ],
-    }));
+    setGameState((prevState) => {
+      const itemIndex = prevState.shopItems.findIndex((item) => item.id === id); // findIndex() function to find the index of the item in the shopItems array if it exists or -1 if it doesn't
+      let newShopItems = [...prevState.shopItems]; // Copy the shopItems array to a new array so I can add it as a new property in the new state
+
+      if (itemIndex >= 0) {
+        // Item exists, update its amount
+        newShopItems[itemIndex] = {
+          ...newShopItems[itemIndex], // Copy the previus item object to keep the id
+          amount: newShopItems[itemIndex].amount + 1, // Increase the amount of the item by 1
+        };
+      } else {
+        // Item doesn't exist, add new item
+        newShopItems.push({ id: id, amount: 1 });
+      }
+
+      return {
+        ...prevState, //Spread operator to copy the old data
+        cookiesCount: prevState.cookiesCount - itemCost, // Subtract the cost of the item from the number of cookies
+        cookiesPerSecond: prevState.cookiesPerSecond + increase, // Increase the number of CPS by the increase of the item
+        shopItems: newShopItems, // Make the shopItems array equal to the newShopItems array
+      };
+    });
   };
 
   return (
