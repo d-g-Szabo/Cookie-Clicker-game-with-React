@@ -38,6 +38,12 @@ localStorage.setItem("cookiesPerSecond", cookiesPerSecond.toString());
 🏹 Retrieve data to populate your cookie upgrades from a third-party API using fetch and useEffect().
 https://cookie-upgrade-api.vercel.app/api/upgrades
 
+I made to keep track the number of items bought in the shop.
+
+I saved the game data in an object like I did in week 3. It was super hard to make it work, but it was worth the hassle, as I learned a lot by doing so. Like I learned how to update the useState if I handle an object, it was very frustrating to make it work as it is completely different from the single value change or an array.
+
+Conditional rendering on buyable items, they show up when only 10% more cookies needed to be able to buy them and they are red until the user have enough cookies to buy them.
+
 ## Please also provide an assignment reflection in your project README.md file.(Required)
 
 🎯 Please mention the requirements you met and which goals you achieved for this assignment.
