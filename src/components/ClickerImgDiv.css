@@ -1,0 +1,20 @@
+.logo.react:active {
+  /* created animation gelatine, which transform the scale on the img in 0.25 sec and infinite combines the 4 transform into a single property */
+  animation: gelatine 0.25s infinite;
+}
+
+@keyframes gelatine {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}

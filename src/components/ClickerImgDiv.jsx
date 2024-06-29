@@ -8,12 +8,12 @@ export default function ClickerImgDiv({ setGameState }) {
         src={reactLogo}
         className="logo react"
         alt="React logo"
-        onClick={() =>
+        onClick={() => {
           setGameState((prevState) => ({
             ...prevState,
             cookiesCount: prevState.cookiesCount + 1,
-          }))
-        }
+          }));
+        }}
       />
     </div>
   );
