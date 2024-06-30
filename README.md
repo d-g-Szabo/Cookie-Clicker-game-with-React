@@ -22,7 +22,11 @@ I met all the requirements for this assignment.
 
 # Wireframe:
 
-![](https://d-g-szabo.github.io/week03-assignment/cookies_clicker_wireframe.jpg)
+![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/public/cookies_clicker_react_wireframe.jpg)
+
+# Component flow:
+
+![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/public/cookie_clicker_react_.jpg)
 
 # Stretch Goals:
 
