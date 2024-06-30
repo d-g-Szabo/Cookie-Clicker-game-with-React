@@ -22,7 +22,7 @@ I met all the requirements for this assignment.
 
 # Wireframe:
 
-![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/blob/main/public/cookies_clicker_react_wireframe.jpg)
+![](https://github.com/d-g-Szabo/Cookie-Clicker-game-with-React/blob/2e07ea653af278210abcdfceb07cec30914e71c8/public/cookies_clicker_react_wireframe.jpg)
 
 # Component flow:
 
