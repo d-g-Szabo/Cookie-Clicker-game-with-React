@@ -18,15 +18,15 @@ I met all the requirements for this assignment.
 
     🐿️ As a user, I want to be able to click the cookie and increment the counter
     🐿️ As a user, I want to see the counter automatically increment using an interval timer
-    🐿️ As a user, I want to purchase items i can afford in the shop and increase the number of cookies every time the interval passes
+    🐿️ As a user, I want to purchase items I can afford in the shop and increase the number of cookies every time the interval passes
 
 # Wireframe:
 
-![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/public/cookies_clicker_react_wireframe.jpg)
+![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/blob/main/public/cookies_clicker_react_wireframe.jpg)
 
 # Component flow:
 
-![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/public/cookie_clicker_react_.jpg)
+![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/blob/main/public/cookie_clicker_react_.jpg)
 
 # Stretch Goals:
 
