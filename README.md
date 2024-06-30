@@ -26,7 +26,7 @@ I met all the requirements for this assignment.
 
 # Component flow:
 
-![](https://d-g-szabo.github.io/Cookie-Clicker-game-with-React/blob/main/public/cookie_clicker_react_.jpg)
+![](https://github.com/d-g-Szabo/Cookie-Clicker-game-with-React/blob/e401bf82207aa675655cab07f7d1c55355062b3e/public/cookie_clicker_react_.jpg)
 
 # Stretch Goals:
 
